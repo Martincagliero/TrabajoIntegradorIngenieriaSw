@@ -12,9 +12,8 @@ public static class InfrastructureServiceExtensions
     ConfigurationManager config,
     ILogger logger)
   {
-    // Always use SQL Server from Aspire
     string? connectionString = config.GetConnectionString("AppDb");
-    Guard.Against.Null(connectionString, "AppDb connection string is required. Make sure the application is running with Aspire.");
+    Guard.Against.Null(connectionString, "AppDb connection string is required.");
 
     services.AddScoped<EventDispatchInterceptor>();
     services.AddScoped<IDomainEventDispatcher, MediatorDomainEventDispatcher>();

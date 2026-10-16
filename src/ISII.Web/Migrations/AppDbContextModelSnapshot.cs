@@ -58,6 +58,21 @@ namespace ISII.Web.Migrations
                     b.ToTable("CartItems", (string)null);
                 });
 
+            modelBuilder.Entity("ISII.Web.Domain.ClienteAggregate.Cliente", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Clientes");
+                });
+
             modelBuilder.Entity("ISII.Web.Domain.GuestUserAggregate.GuestUser", b =>
                 {
                     b.Property<Guid>("Id")
