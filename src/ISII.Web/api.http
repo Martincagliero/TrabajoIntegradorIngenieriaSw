@@ -51,6 +51,28 @@ Content-Type: application/json
 }
 ### Note: Get order ID from response for future use
 
+### Crear cliente
+POST {{MinimalClean_HostAddress}}/clientes
+Content-Type: application/json
 
+{
+  "nombre": "Juan Pérez"
+}
+
+### Consultar cliente por ID
+GET {{MinimalClean_HostAddress}}/clientes/1
+Accept: application/json
+
+### Error de validación: nombre vacío
+POST {{MinimalClean_HostAddress}}/clientes
+Content-Type: application/json
+
+{
+  "nombre": ""
+}
+
+### Cliente inexistente
+GET {{MinimalClean_HostAddress}}/clientes/9999
+Accept: application/json
 
 

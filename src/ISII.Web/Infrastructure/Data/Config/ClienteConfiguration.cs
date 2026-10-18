@@ -12,6 +12,7 @@ public class ClienteConfiguration : IEntityTypeConfiguration<Cliente>
       .HasValueGenerator<
         VogenIntIdValueGenerator<AppDbContext, Cliente, ClienteId>>()
       .HasVogenConversion()
+        .HasSentinel(ClienteId.New)
       .IsRequired();
 
     builder.Property(cliente => cliente.Nombre)

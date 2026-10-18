@@ -16,7 +16,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) :
   public DbSet<GuestUser> GuestUsers => Set<GuestUser>();
   public DbSet<Order> Orders => Set<Order>();
   public DbSet<OrderItem> OrderItems => Set<OrderItem>();
-  //public DbSet<Cupon> Cupon => Set<OrderItem>();
+
 public DbSet<Cliente> Clientes => Set<Cliente>(); //esto lo agregamos
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
